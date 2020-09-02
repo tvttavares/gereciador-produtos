@@ -1,0 +1,1 @@
+UPDATE tb_produto set nome = 'Abacaxi', valor = 12.50 where id = 1;
