@@ -1,5 +1,7 @@
 package com.multi.gerenciadorprodutosapi.model;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -7,6 +9,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -20,6 +23,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "tb_produto")
 public class Produto {
 
 	@Id
@@ -38,5 +42,5 @@ public class Produto {
 	@Column(nullable = false)
 	@NotEmpty
 	@Size(min = 2, max = 15)
-	private Double valor;
+	private BigDecimal valor;
 }

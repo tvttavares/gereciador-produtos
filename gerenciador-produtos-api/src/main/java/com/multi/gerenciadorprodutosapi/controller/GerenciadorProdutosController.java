@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.multi.gerenciadorprodutosapi.exception.ProdutoNaoEncontradoException;
 import com.multi.gerenciadorprodutosapi.model.Produto;
-import com.multi.gerenciadorprodutosapi.repository.ProdutoRepository;
+import com.multi.gerenciadorprodutosapi.service.ProdutoService;
 
 import lombok.AllArgsConstructor;
 
@@ -30,48 +30,37 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class GerenciadorProdutosController {
 
-	private ProdutoRepository produtoRepository;
+	private ProdutoService produtoService;
 
 	@GetMapping
 	@ResponseStatus(HttpStatus.OK)
 	public List<Produto> listarProdutos() {
-		return produtoRepository.findAll();
+		return produtoService.listarProdutos();
 	}
 
 	@GetMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Produto> buscarPorId(@PathVariable(value = "id") long produtoId)
 			throws ProdutoNaoEncontradoException {
-		Produto room = produtoRepository.findById(produtoId)
-				.orElseThrow(() -> new ProdutoNaoEncontradoException("Produto nao encontrado: " + produtoId));
-
-		return ResponseEntity.ok().body(room);
+		return produtoService.buscarPorId(produtoId);
 	}
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Produto criarProduto(@Valid @RequestBody Produto produto) {
-		return produtoRepository.save(produto);
+		return produtoService.criarProduto(produto);
 	}
 
 	@PutMapping("/{produtoId}")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Produto> atualizarProduto(@PathVariable Long produtoId,
 			@Valid @RequestBody Produto produtoDetalhes) throws ProdutoNaoEncontradoException {
-		Produto produto = produtoRepository.findById(produtoId)
-				.orElseThrow(() -> new ProdutoNaoEncontradoException("Produto nao encontrado: " + produtoId));
-
-		final Produto updateRoom = produtoRepository.save(produtoDetalhes);
-
-		return ResponseEntity.ok(updateRoom);
+		return produtoService.atualizarProduto(produtoId, produtoDetalhes);
 	}
 
-	@DeleteMapping("/{roomId}")
+	@DeleteMapping("/{produtoId}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void removerProduto(@PathVariable Long roomId) throws ProdutoNaoEncontradoException {
-		Produto room = produtoRepository.findById(roomId)
-				.orElseThrow(() -> new ProdutoNaoEncontradoException("Produto nao encontrado: " + roomId));
-
-		produtoRepository.delete(room);
+	public void removerProduto(@PathVariable Long produtoId) throws ProdutoNaoEncontradoException {
+		produtoService.removerProduto(produtoId);
 	}
 }
