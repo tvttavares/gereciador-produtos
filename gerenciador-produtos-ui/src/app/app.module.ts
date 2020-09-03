@@ -20,8 +20,10 @@ import { HomeComponent } from './view/home/home.component';
 import { ProdutosCrudComponent } from './view/produtos-crud/produtos-crud.component';
 import { ProdutosCriarComponent } from './components/produtos/produtos-criar/produtos-criar.component'
 import { ProdutosLerComponent } from './components/produtos/produtos-ler/produtos-ler.component';
-import { ProdutosAtualizarComponent } from  './components/produtos/produtos-atualizar/produtos-atualizar.component';
+import { ProdutosAtualizarComponent } from './components/produtos/produtos-atualizar/produtos-atualizar.component';
 import { ProdutosConsultarComponent } from './components/produtos/produtos-consultar/produtos-consultar.component';
+import { ProdutosExcluirComponent } from './components/produtos/produtos-excluir/produtos-excluir.component';
+
 
 import { HttpClientModule } from '@angular/common/http'
 
@@ -49,7 +51,8 @@ registerLocaleData(localePT)
     ProdutosCriarComponent,
     ProdutosLerComponent,
     ProdutosAtualizarComponent,
-    ProdutosConsultarComponent
+    ProdutosConsultarComponent,
+    ProdutosExcluirComponent
   ],
   imports: [
     BrowserModule,

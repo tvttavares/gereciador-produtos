@@ -1,3 +1,4 @@
+import { ProdutosExcluirComponent } from './components/produtos/produtos-excluir/produtos-excluir.component';
 import { ProdutosConsultarComponent } from './components/produtos/produtos-consultar/produtos-consultar.component';
 import { ProdutosAtualizarComponent } from './components/produtos/produtos-atualizar/produtos-atualizar.component';
 import { ProdutosCriarComponent } from './components/produtos/produtos-criar/produtos-criar.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: "produtos/consultar/:id",
     component: ProdutosConsultarComponent
+  },
+  {
+    path: "produtos/excluir/:id",
+    component: ProdutosExcluirComponent
   }
 ];
 
