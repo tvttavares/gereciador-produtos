@@ -13,12 +13,20 @@ import { NavComponent } from './components/template/nav/nav.component';
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatCardModule } from '@angular/material/card'
 import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+import { HomeComponent } from './view/home/home.component';
+import { ProdutosCrudComponent } from './view/produtos-crud/produtos-crud.component';
+import { ProdutosCriarComponent } from './components/produtos/produtos-criar/produtos-criar.component'
+
+import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input'
 
 import localePT from '@angular/common/locales/pt'
 import { registerLocaleData } from '@angular/common';
-import { HomeComponent } from './view/home/home.component';
-import { ProdutosCrudComponent } from './view/produtos-crud/produtos-crud.component'
-
 registerLocaleData(localePT)
 
 @NgModule({
@@ -28,7 +36,8 @@ registerLocaleData(localePT)
     FooterComponent,
     NavComponent,
     HomeComponent,
-    ProdutosCrudComponent
+    ProdutosCrudComponent,
+    ProdutosCriarComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +46,13 @@ registerLocaleData(localePT)
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    HttpClientModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [{
     provide: LOCALE_ID,
