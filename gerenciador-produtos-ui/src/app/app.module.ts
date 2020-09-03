@@ -1,3 +1,4 @@
+import { ProdutosLerComponent } from './components/produtos/produtos-ler/produtos-ler.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 
@@ -21,12 +22,18 @@ import { ProdutosCrudComponent } from './view/produtos-crud/produtos-crud.compon
 import { ProdutosCriarComponent } from './components/produtos/produtos-criar/produtos-criar.component'
 
 import { HttpClientModule } from '@angular/common/http'
+
 import { FormsModule } from '@angular/forms'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
+import { MatTableModule } from '@angular/material/table';
+
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 import localePT from '@angular/common/locales/pt'
 import { registerLocaleData } from '@angular/common';
+
 registerLocaleData(localePT)
 
 @NgModule({
@@ -37,7 +44,8 @@ registerLocaleData(localePT)
     NavComponent,
     HomeComponent,
     ProdutosCrudComponent,
-    ProdutosCriarComponent
+    ProdutosCriarComponent,
+    ProdutosLerComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +60,10 @@ registerLocaleData(localePT)
     HttpClientModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [{
     provide: LOCALE_ID,
