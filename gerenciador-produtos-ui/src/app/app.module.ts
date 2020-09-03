@@ -1,4 +1,3 @@
-import { ProdutosLerComponent } from './components/produtos/produtos-ler/produtos-ler.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 
@@ -20,6 +19,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HomeComponent } from './view/home/home.component';
 import { ProdutosCrudComponent } from './view/produtos-crud/produtos-crud.component';
 import { ProdutosCriarComponent } from './components/produtos/produtos-criar/produtos-criar.component'
+import { ProdutosLerComponent } from './components/produtos/produtos-ler/produtos-ler.component';
+import { ProdutosAtualizarComponent } from  './components/produtos/produtos-atualizar/produtos-atualizar.component';
 
 import { HttpClientModule } from '@angular/common/http'
 
@@ -45,7 +46,8 @@ registerLocaleData(localePT)
     HomeComponent,
     ProdutosCrudComponent,
     ProdutosCriarComponent,
-    ProdutosLerComponent
+    ProdutosLerComponent,
+    ProdutosAtualizarComponent
   ],
   imports: [
     BrowserModule,

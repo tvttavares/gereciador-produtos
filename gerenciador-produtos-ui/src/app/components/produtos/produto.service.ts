@@ -31,4 +31,14 @@ export class ProdutoService {
   ler(): Observable<Produto[]> {
     return this.http.get<Produto[]>(this.baseUrl)
   }
+
+  lerPorId(id: number): Observable<Produto> {
+    const url = `${this.baseUrl}/${id}`
+    return this.http.get<Produto>(url)
+  }
+
+  atualizar(produto: Produto): Observable<Produto> {
+    const url = `${this.baseUrl}/${produto.id}`
+    return this.http.put<Produto>(url, produto)
+  }
 }

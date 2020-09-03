@@ -1,3 +1,4 @@
+import { ProdutosAtualizarComponent } from './components/produtos/produtos-atualizar/produtos-atualizar.component';
 import { ProdutosCriarComponent } from './components/produtos/produtos-criar/produtos-criar.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: "produtos/criar",
     component: ProdutosCriarComponent
+  },
+  {
+    path: "produtos/atualizar/:id",
+    component: ProdutosAtualizarComponent
   }
 ];
 
