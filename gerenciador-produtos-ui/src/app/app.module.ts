@@ -21,6 +21,7 @@ import { ProdutosCrudComponent } from './view/produtos-crud/produtos-crud.compon
 import { ProdutosCriarComponent } from './components/produtos/produtos-criar/produtos-criar.component'
 import { ProdutosLerComponent } from './components/produtos/produtos-ler/produtos-ler.component';
 import { ProdutosAtualizarComponent } from  './components/produtos/produtos-atualizar/produtos-atualizar.component';
+import { ProdutosConsultarComponent } from './components/produtos/produtos-consultar/produtos-consultar.component';
 
 import { HttpClientModule } from '@angular/common/http'
 
@@ -47,7 +48,8 @@ registerLocaleData(localePT)
     ProdutosCrudComponent,
     ProdutosCriarComponent,
     ProdutosLerComponent,
-    ProdutosAtualizarComponent
+    ProdutosAtualizarComponent,
+    ProdutosConsultarComponent
   ],
   imports: [
     BrowserModule,
