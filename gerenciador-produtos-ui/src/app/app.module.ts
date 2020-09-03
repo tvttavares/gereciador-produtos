@@ -15,7 +15,9 @@ import { MatCardModule } from '@angular/material/card'
 import { MatListModule } from '@angular/material/list';
 
 import localePT from '@angular/common/locales/pt'
-import { registerLocaleData } from '@angular/common'
+import { registerLocaleData } from '@angular/common';
+import { HomeComponent } from './view/home/home.component';
+import { ProdutosCrudComponent } from './view/produtos-crud/produtos-crud.component'
 
 registerLocaleData(localePT)
 
@@ -24,7 +26,9 @@ registerLocaleData(localePT)
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    NavComponent
+    NavComponent,
+    HomeComponent,
+    ProdutosCrudComponent
   ],
   imports: [
     BrowserModule,
