@@ -33,7 +33,7 @@ export class ProdutosExcluirComponent implements OnInit {
   }
 
   cancelar(): void {
-    this.router.navigate(["/products"]);
+    this.router.navigate(["/produtos"]);
   }
 
 }

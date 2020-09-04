@@ -2,13 +2,14 @@
     <mat-card-title class="title"> Detalhes do Produto </mat-card-title>
     <form>
         <mat-form-field>
-            <input matInput placeholder="Nome" [(ngModel)]="produto.nome" name="nome" disabled>
+            <input matInput placeholder="Nome" [value]="produto.nome" name="nome" disabled>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Categoria" [(ngModel)]="produto.categoria" name="categoria" disabled>
+            <input matInput placeholder="Categoria"
+                [value]="produto.categoria == 'PERECIVEL' ? 'Perecível' : 'Não perecível'" name="categoria" disabled>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Valor" [(ngModel)]="produto.valor" name="valor" disabled>
+            <input matInput placeholder="Valor" [value]="produto.valor" name="valor" disabled>
         </mat-form-field>
     </form>
 
@@ -16,4 +17,3 @@
         Voltar
     </button>
 </mat-card>
-

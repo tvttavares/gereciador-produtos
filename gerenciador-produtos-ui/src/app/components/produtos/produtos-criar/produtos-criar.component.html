@@ -2,13 +2,17 @@
     <mat-card-title class="title"> Novo Produto </mat-card-title>
     <form>
         <mat-form-field>
-            <input matInput placeholder="Nome" [(ngModel)]="produto.nome" name="nome"> 
+            <input matInput placeholder="Nome" [(ngModel)]="produto.nome" name="nome">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Categoria" [(ngModel)]="produto.categoria" name="categoria">
+            <select matNativeControl placeholder="Categoria" [(ngModel)]="produto.categoria" name="categoria">
+                <option value="PERECIVEL">Perecível</option>
+                <option value="NAOPERECIVEL">Não perecível</option>
+            </select>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Valor" [(ngModel)]="produto.valor" name="valor">
+            <input type="number" ng-pattern="/^[0-9]+([,.][0-9]+)?$/" matInput placeholder="Valor"
+                [(ngModel)]="produto.valor" maxlength="2" maxlength="15" name="valor">
         </mat-form-field>
     </form>
 

@@ -5,7 +5,8 @@
             <input matInput placeholder="Nome" [value]="produto.nome" name="nome" disabled>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Categoria" [value]="produto.categoria" name="categoria" disabled>
+            <input matInput placeholder="Categoria"
+                [value]="produto.categoria == 'PERECIVEL' ? 'Perecível' : 'Não perecível'" name="categoria" disabled>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Preço (R$)" [value]="produto.valor" name="valor" disabled>
